@@ -1,6 +1,8 @@
 package demos.gui.sidemenu;
 
 import com.jfoenix.controls.JFXListView;
+
+import app.controllers.AddProductController;
 import demos.gui.uicomponents.*;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.Flow;
@@ -23,6 +25,11 @@ public class SideMenuController {
 
     @FXMLViewFlowContext
     private ViewFlowContext context;
+    
+    @FXML
+    @ActionTrigger("buttons")
+    private Label allProducts;
+    
     @FXML
     @ActionTrigger("buttons")
     private Label button;
@@ -113,6 +120,7 @@ public class SideMenuController {
             }).start();
         });
         Flow contentFlow = (Flow) context.getRegisteredObject("ContentFlow");
+        bindNodeToController(allProducts, AddProductController.class, contentFlow, contentFlowHandler);
         bindNodeToController(button, ButtonController.class, contentFlow, contentFlowHandler);
         bindNodeToController(checkbox, CheckboxController.class, contentFlow, contentFlowHandler);
         bindNodeToController(combobox, ComboBoxController.class, contentFlow, contentFlowHandler);

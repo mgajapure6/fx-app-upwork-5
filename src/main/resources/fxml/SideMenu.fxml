@@ -9,6 +9,11 @@
         <String fx:value="side-menu"/>
     </styleClass>
     <JFXListView fx:id="sideList">
+    	<Label fx:id="">Dashboard</Label>
+        <Label fx:id="">Clients</Label>
+        <Label fx:id="">Suppliers</Label>
+        <Label fx:id="allProducts">Products</Label>
+        <Label fx:id="">Bills</Label>
         <Label fx:id="button">Buttons</Label>
         <Label fx:id="checkbox">Check Box</Label>
         <Label fx:id="combobox">Combo Box</Label>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="viewProductsStackPane" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2">
+    <VBox maxWidth="900" maxHeight="900" spacing="10" fx:id="vboxMain">
+        <children>
+            <HBox alignment="CENTER">
+                <Label styleClass="title-label">Products List</Label>
+                <Label styleClass="title-label" fx:id="treeTableViewCount" minWidth="80"></Label>
+                <JFXButton fx:id="treeTableViewAdd" buttonType="FLAT" text="+"/>
+                <JFXButton fx:id="treeTableViewRemove" buttonType="FLAT" text="-"/>
+                <StackPane HBox.hgrow="ALWAYS">
+                    <StackPane StackPane.alignment="CENTER_RIGHT" maxWidth="200">
+                        <JFXTextField fx:id="searchField" promptText="Search..."></JFXTextField>
+                    </StackPane>
+                </StackPane>
+            </HBox>
+            <JFXTreeTableView fx:id="treeTableView">
+                <columns>
+                    <JFXTreeTableColumn fx:id="srNoCol"
+                                        minWidth="100" text="Sr. No." prefWidth="100"
+                                        resizable="false"></JFXTreeTableColumn>
+                    <JFXTreeTableColumn fx:id="productNameCol" text="Product Name"
+                                        minWidth="233" prefWidth="253" resizable="true"></JFXTreeTableColumn>
+                    <JFXTreeTableColumn fx:id="productDescCol" text="Product Description"
+                                        minWidth="333" resizable="true"></JFXTreeTableColumn>
+                    <JFXTreeTableColumn fx:id="productPriceCol" text="Product Price"
+                                        minWidth="153" resizable="true"></JFXTreeTableColumn>
+                </columns>
+            </JFXTreeTableView>
+        </children>
+    </VBox>
+</StackPane>
